@@ -1,0 +1,125 @@
+{
+ "crawl": "CC-MAIN-2026-30",
+ "warc_files": 32,
+ "documents_per_pipeline": 10000,
+ "pipelines": {
+  "FineWeb": {
+   "extraction": "trafilatura",
+   "labels": {
+    "Human": 8649,
+    "Mixed": 384,
+    "AI": 963
+   },
+   "stages": [
+    {
+     "stage": "Sample",
+     "Human": 100.0,
+     "Mixed": 100.0,
+     "AI": 100.0,
+     "kept": 10000
+    },
+    {
+     "stage": "English",
+     "kept": 3384,
+     "Human": 32.68585963695225,
+     "Mixed": 30.989583333333332,
+     "AI": 45.482866043613704
+    },
+    {
+     "stage": "Gopher repetition",
+     "kept": 2491,
+     "Human": 23.343739160596602,
+     "Mixed": 25.260416666666668,
+     "AI": 38.940809968847354
+    },
+    {
+     "stage": "Gopher quality",
+     "kept": 1805,
+     "Human": 16.117470227771996,
+     "Mixed": 21.614583333333332,
+     "AI": 34.060228452751815
+    },
+    {
+     "stage": "C4 rules",
+     "kept": 1638,
+     "Human": 14.464099895941727,
+     "Mixed": 21.09375,
+     "AI": 31.77570093457944
+    },
+    {
+     "stage": "FineWeb quality",
+     "kept": 1459,
+     "Human": 12.764481442941381,
+     "Mixed": 19.010416666666668,
+     "AI": 29.28348909657321
+    }
+   ]
+  },
+  "DCLM": {
+   "extraction": "resiliparse",
+   "labels": {
+    "Human": 8697,
+    "Mixed": 725,
+    "AI": 578
+   },
+   "stages": [
+    {
+     "stage": "Sample",
+     "Human": 100.0,
+     "Mixed": 100.0,
+     "AI": 100.0,
+     "kept": 10000
+    },
+    {
+     "stage": "URL",
+     "kept": 9963,
+     "Human": 99.63205703116017,
+     "Mixed": 99.3103448275862,
+     "AI": 100.0
+    },
+    {
+     "stage": "English",
+     "kept": 3122,
+     "Human": 30.171323444866047,
+     "Mixed": 29.24137931034483,
+     "AI": 49.48096885813149
+    },
+    {
+     "stage": "Length",
+     "kept": 2963,
+     "Human": 28.38909968954812,
+     "Mixed": 29.24137931034483,
+     "AI": 48.78892733564014
+    },
+    {
+     "stage": "Other heuristics",
+     "kept": 2845,
+     "Human": 27.147292169713694,
+     "Mixed": 28.551724137931036,
+     "AI": 47.92387543252595
+    },
+    {
+     "stage": "Repetition",
+     "kept": 1867,
+     "Human": 17.31631597102449,
+     "Mixed": 18.482758620689655,
+     "AI": 39.273356401384085
+    },
+    {
+     "stage": "Line cleanup",
+     "kept": 1694,
+     "Human": 15.59158330458779,
+     "Mixed": 17.79310344827586,
+     "AI": 36.15916955017301
+    },
+    {
+     "stage": "DCLM classifier",
+     "kept": 245,
+     "Human": 1.483270093135564,
+     "Mixed": 4.413793103448276,
+     "AI": 14.53287197231834
+    }
+   ]
+  }
+ }
+}

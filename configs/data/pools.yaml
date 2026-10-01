@@ -1,0 +1,17 @@
+# Candidate selection (python -m wildai.data.preselect) and training pools (python -m wildai.data.pools).
+
+editlens:
+  human_bucket: 0          # EditLens bucket taken as human-written
+  ai_min_bucket: 2         # buckets 2 and 3 are AI candidates; bucket 1 is dropped
+  human_token_budget: 41000000000   # GPT-2 tokens of human candidates, split across crawls like the AI candidates
+  key: wildai-preselect-v1
+
+natural:
+  dumps: [CC-MAIN-2026-04, CC-MAIN-2026-08, CC-MAIN-2026-12, CC-MAIN-2026-17, CC-MAIN-2026-21, CC-MAIN-2026-25]
+  documents: 2000000       # label-blind draw from the 2026 crawls: the FW26 evaluation sets and the measured AI share
+  key: wildai-natural-v1
+
+pools:
+  key: wildai-pool-v1      # hash key of the pools' order
+  bins: 1024
+  rows_per_shard: 100000

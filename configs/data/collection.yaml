@@ -1,0 +1,52 @@
+# Web collection for the WildAI pool (python -m wildai.data.collect.fineweb / wildai.data.collect.common_crawl).
+#
+# FineWeb part: the 16 FineWeb v1.4.0 dumps from CC-MAIN-2024-10 to CC-MAIN-2025-26.
+# Extension: the twelve crawls from July 2025 to June 2026, processed with FineWeb's recipe (DataTrove 0.2.0).
+# The paper's pool was drawn from more than 280B EditLens-labelled tokens across both parts.
+
+fineweb:
+  revision: 9bb295ddab0e05d785b879661af7260fed5140fc  # HuggingFaceFW/fineweb, branch v1.4.0
+  seed: 20260601
+  target_tokens_per_dump: 17000000000  # GPT-2 tokens read per dump
+  min_chars: 200
+  dumps:
+    - CC-MAIN-2024-10
+    - CC-MAIN-2024-18
+    - CC-MAIN-2024-22
+    - CC-MAIN-2024-26
+    - CC-MAIN-2024-30
+    - CC-MAIN-2024-33
+    - CC-MAIN-2024-38
+    - CC-MAIN-2024-42
+    - CC-MAIN-2024-46
+    - CC-MAIN-2024-51
+    - CC-MAIN-2025-05
+    - CC-MAIN-2025-08
+    - CC-MAIN-2025-13
+    - CC-MAIN-2025-18
+    - CC-MAIN-2025-21
+    - CC-MAIN-2025-26
+
+common_crawl:
+  seed: 20260711
+  # WARC files drawn uniformly from each crawl (about 2.6% of a 100,000-file crawl); null processes whole crawls.
+  warc_files_per_crawl: 2600
+  recipe:
+    batch_files: 16
+    extraction_timeout: 0.1
+    minhash: true   # per crawl, within the drawn WARC files
+    pii: true
+    min_chars: 200
+  dumps:
+    - CC-MAIN-2025-30
+    - CC-MAIN-2025-33
+    - CC-MAIN-2025-38
+    - CC-MAIN-2025-43
+    - CC-MAIN-2025-47
+    - CC-MAIN-2025-51
+    - CC-MAIN-2026-04
+    - CC-MAIN-2026-08
+    - CC-MAIN-2026-12
+    - CC-MAIN-2026-17
+    - CC-MAIN-2026-21
+    - CC-MAIN-2026-25

@@ -1,0 +1,11 @@
+{
+  "batch_size": 16,
+  "targets": {
+    "c4": 480,
+    "fw22": 480,
+    "fw26": 369,
+    "fw26_human": 293,
+    "fw26_ai": 66,
+    "cosmopedia": 564
+  }
+}

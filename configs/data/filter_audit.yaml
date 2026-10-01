@@ -1,0 +1,7 @@
+# The filter-survival audit (python -m wildai.data.measure.filter_audit): 10,000 documents of one 2026 crawl, drawn after
+# FineWeb's URL filter and Trafilatura extraction from 32 WARC files drawn uniformly from the crawl.
+dump: CC-MAIN-2026-30
+warc_files: 32
+documents: 10000
+seed: 20260815
+extraction_timeout: 0.1

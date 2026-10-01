@@ -1,0 +1,31 @@
+# Labelers (python -m wildai.labeling.{editlens,weborganizer} and python -m wildai.labeling.pangram.cli).
+# Every model is pinned to an exact Hugging Face revision.
+
+editlens:
+  base_model: {repo: meta-llama/Llama-3.2-3B, revision: 13afe5124825b4f3751f836b40dafda64c1ed062}
+  adapter: {repo: pangram/editlens_Llama-3.2-3B, revision: b5f8044f631f5b455eafbcb569dcf175f2b0726d}
+  quantization: nf4    # 4-bit NF4 base, as the adapter was trained (QLoRA)
+  max_length: 512      # tokens per window
+  windows: 3           # first, middle and last window; bucket probabilities are averaged
+  batch_size: 128
+  read_rows: 4096
+
+pangram:
+  base_url: https://text.external-api.pangram.com   # the public API (https://docs.pangram.com)
+  model: default          # a selector from GET /models
+  expected_version: "3.3.2"   # the paper's detector; results from another version stop the run (null accepts any)
+  max_chars: 200000       # longer documents are labeled on their first 200,000 characters
+  words_per_unit: 100     # billable-unit size used for packing jobs (100 words for Pangram 4, 1,000 for Pangram 3)
+  max_units_per_job: 1000
+  max_items_per_job: 1000
+  max_outstanding_jobs: 4
+  poll_interval: 15.0
+  keep_windows: true
+
+weborganizer:
+  topic: {repo: WebOrganizer/TopicClassifier, revision: 8d158c9d514cdc21a7c8e9bd94e5dc483d49e024}
+  format: {repo: WebOrganizer/FormatClassifier, revision: 67e7104a18a512a9ade9e03dca0cbf36eb977f3d}
+  max_length: 8192
+  batch_size: 32
+  dtype: bfloat16
+  memory_efficient_attention: true   # xformers on a GPU; the padded path needs transformers < 5.10

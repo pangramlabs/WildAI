@@ -1,0 +1,9 @@
+name,prompts,scored,ai_pct,ai_pct_low,ai_pct_high,mixed_pct
+268m-g081-control,writingprompts,499,18.6373,15.4309,22.0441,6.41283
+268m-g081-ai-r0.025,writingprompts,499,22.4449,18.6373,26.0521,4.80962
+268m-g081-ai-r0.05,writingprompts,498,21.0843,17.6657,24.6988,3.81526
+268m-g081-ai-r0.25,writingprompts,496,26.8145,22.9839,30.6452,4.83871
+268m-g081-ai-r0.5,writingprompts,498,22.6908,19.0763,26.7068,3.41365
+268m-g081-ai-r1,writingprompts,500,28.4,24.4,32.4,3.4
+268m-g081-ai-r2,writingprompts,497,37.2233,32.998,41.6499,3.62173
+268m-g081-ai-r4,writingprompts,498,28.9157,25.1004,33.1325,5.02008

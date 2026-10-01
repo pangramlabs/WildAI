@@ -1,0 +1,91 @@
+# The monthly measurement sample (python -m wildai.data.monthly_sample): 5,000 documents per crawl month, 62 months.
+#
+# FineWeb months (January 2021 to June 2025) are read from Hugging Face FineWeb v1.4.0; a month is the capture month of
+# its documents, so one crawl can serve two months (and May 2025 draws on two crawls). Six calendar months have no
+# crawl. From July 2025 on, each month is its own crawl, read from 32 WARC files drawn uniformly from the whole crawl and
+# run through the FineWeb recipe. A month's seed is its frame's seed plus YYYYMM; it keys the document draw and the
+# bootstrap interval of its AI share.
+
+documents_per_month: 5000
+fineweb_revision: 9bb295ddab0e05d785b879661af7260fed5140fc
+fineweb_pool_factor: 4
+warc_files_per_crawl: 32
+recipe:
+  batch_files: 8
+  extraction_timeout: 0.1
+  minhash: true
+  pii: true
+  min_chars: 200
+
+frames:
+  - source: fineweb
+    seed: 20260917
+    months:
+      "2021-01": [CC-MAIN-2021-04]
+      "2021-02": [CC-MAIN-2021-10]
+      "2021-03": [CC-MAIN-2021-10]
+      "2021-04": [CC-MAIN-2021-17]
+      "2021-05": [CC-MAIN-2021-21]
+      "2021-06": [CC-MAIN-2021-25]
+      "2021-07": [CC-MAIN-2021-31]
+      "2021-08": [CC-MAIN-2021-31]
+      "2021-09": [CC-MAIN-2021-39]
+      "2021-10": [CC-MAIN-2021-43]
+      "2021-11": [CC-MAIN-2021-49]
+      "2021-12": [CC-MAIN-2021-49]
+      "2022-01": [CC-MAIN-2022-05]
+      "2022-05": [CC-MAIN-2022-21]
+      "2022-06": [CC-MAIN-2022-27]
+      "2022-07": [CC-MAIN-2022-27]
+      "2022-08": [CC-MAIN-2022-33]
+      "2022-09": [CC-MAIN-2022-40]
+      "2022-10": [CC-MAIN-2022-40]
+      "2022-11": [CC-MAIN-2022-49]
+      "2022-12": [CC-MAIN-2022-49]
+      "2023-01": [CC-MAIN-2023-06]
+      "2023-02": [CC-MAIN-2023-06]
+      "2023-03": [CC-MAIN-2023-14]
+      "2023-04": [CC-MAIN-2023-14]
+      "2023-05": [CC-MAIN-2023-23]
+      "2023-06": [CC-MAIN-2023-23]
+      "2023-09": [CC-MAIN-2023-40]
+      "2023-10": [CC-MAIN-2023-40]
+      "2023-11": [CC-MAIN-2023-50]
+      "2023-12": [CC-MAIN-2023-50]
+      "2024-02": [CC-MAIN-2024-10]
+      "2024-03": [CC-MAIN-2024-10]
+      "2024-04": [CC-MAIN-2024-18]
+      "2024-05": [CC-MAIN-2024-22]
+      "2024-06": [CC-MAIN-2024-26]
+      "2024-07": [CC-MAIN-2024-30]
+      "2024-08": [CC-MAIN-2024-33]
+      "2024-09": [CC-MAIN-2024-38]
+      "2024-10": [CC-MAIN-2024-42]
+      "2024-11": [CC-MAIN-2024-46]
+      "2024-12": [CC-MAIN-2024-51]
+      "2025-01": [CC-MAIN-2025-05]
+      "2025-02": [CC-MAIN-2025-08]
+      "2025-03": [CC-MAIN-2025-13]
+      "2025-04": [CC-MAIN-2025-18]
+      "2025-05": [CC-MAIN-2025-18, CC-MAIN-2025-21]
+      "2025-06": [CC-MAIN-2025-26]
+  - source: common_crawl_random_warc
+    seed: 20260925
+    months:
+      "2025-07": [CC-MAIN-2025-30]
+      "2025-08": [CC-MAIN-2025-33]
+      "2025-09": [CC-MAIN-2025-38]
+      "2025-10": [CC-MAIN-2025-43]
+      "2025-11": [CC-MAIN-2025-47]
+      "2025-12": [CC-MAIN-2025-51]
+      "2026-01": [CC-MAIN-2026-04]
+      "2026-02": [CC-MAIN-2026-08]
+      "2026-03": [CC-MAIN-2026-12]
+      "2026-04": [CC-MAIN-2026-17]
+      "2026-05": [CC-MAIN-2026-21]
+      "2026-06": [CC-MAIN-2026-25]
+  - source: common_crawl_random_warc
+    seed: 20260918
+    months:
+      "2026-07": [CC-MAIN-2026-30]
+      "2026-08": [CC-MAIN-2026-34]

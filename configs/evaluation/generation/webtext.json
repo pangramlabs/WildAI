@@ -1,0 +1,11 @@
+{
+  "source": "the 5,000 WebText test articles of openai/gpt-2-output-dataset (webtext.test.jsonl), each cut to its first 35 GPT-2 tokens and decoded, as in the MAUVE paper",
+  "prompts": "../prompts/webtext_test_5000.jsonl",
+  "prompts_sha256": "29910100ba2a941d43a9d339fa19c4f326f1a6d8bf1ee81ffd9d2479fa6b8675",
+  "samples_per_prompt": 1,
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": null,
+  "max_new_tokens": 1024,
+  "seed": 21021
+}

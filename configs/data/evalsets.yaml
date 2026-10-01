@@ -1,0 +1,51 @@
+# Evaluation sets (python -m wildai.data.evalsets.cli). Revisions are exact Hugging Face commits.
+# At these revisions the C4 and Cosmopedia settings reproduce the paper's sets document for document.
+
+c4:
+  repo: allenai/c4
+  revision: 1588ec454efa1a09f29cd18ddd04fe05fc8653a2
+  config: en
+  split: train          # the paper's set; C4 comes from a 2019 crawl, so it cannot overlap the training pools
+  target_chars: 120000000
+  min_chars: 200
+
+cosmopedia:
+  repo: HuggingFaceTB/cosmopedia
+  revision: 0ae6ec63f91742bd2d1eaef4f02232c55d719385
+  config: web_samples_v2
+  split: train
+  target_chars: 120000000
+  min_chars: 200
+
+fw22:
+  revision: 9bb295ddab0e05d785b879661af7260fed5140fc   # HuggingFaceFW/fineweb v1.4.0
+  dumps: [CC-MAIN-2021-04, CC-MAIN-2021-10, CC-MAIN-2021-17, CC-MAIN-2021-21, CC-MAIN-2021-25,
+          CC-MAIN-2021-31, CC-MAIN-2021-39, CC-MAIN-2021-43, CC-MAIN-2021-49]
+  target_chars: 120000000
+  min_chars: 200
+  seed: 20260816
+
+fw26:
+  target_tokens: 16000000   # GPT-2 tokens
+
+paloma:
+  repo: allenai/paloma
+  revision: 65cd6fc59dba021b21db414fa5e8d7765ffbe5e6
+  split: val
+  sources:                  # our name: Paloma subset
+    c4: c4_en
+    mc4_en: mc4
+    wikitext_103: wikitext_103
+    ptb: ptb
+    redpajama: redpajama
+    falcon_refinedweb: falcon-refinedweb
+    dolma: dolma-v1_5
+    m2d2_s2orc: m2d2_s2orc_unsplit
+    m2d2_wikipedia: m2d2_wikipedia_unsplit
+    c4_100_domains: c4_100_domains
+    reddit_100: dolma_100_subreddits
+    programming: dolma_100_programing_languages
+    twitteraae: twitterAAE_HELM_fixed
+    manosphere: manosphere_meta_sep
+    gab: gab
+    4chan: 4chan_meta_sep

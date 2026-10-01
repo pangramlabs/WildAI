@@ -1,0 +1,115 @@
+[
+ {
+  "target": "c4",
+  "human_tpp_range": [
+   2.8934811910600327,
+   168.9861465823515
+  ],
+  "observed_status_counts": {
+   "above_range": 141,
+   "ok": 597,
+   "below_range": 62
+  },
+  "predicted_status_counts": {
+   "above_range": 41,
+   "ok": 757,
+   "below_range": 2
+  },
+  "ladder_control_predicted_ceg": 1.3315673515071926,
+  "ladder_control_observed_ceg": 1.5111499539923288
+ },
+ {
+  "target": "fw22",
+  "human_tpp_range": [
+   2.8934811910600327,
+   168.9861465823515
+  ],
+  "observed_status_counts": {
+   "above_range": 129,
+   "ok": 619,
+   "below_range": 52
+  },
+  "predicted_status_counts": {
+   "above_range": 38,
+   "ok": 760,
+   "below_range": 2
+  },
+  "ladder_control_predicted_ceg": 1.3216718449181837,
+  "ladder_control_observed_ceg": 1.5082015995972822
+ },
+ {
+  "target": "fw26_human",
+  "human_tpp_range": [
+   2.8934811910600327,
+   168.9861465823515
+  ],
+  "observed_status_counts": {
+   "above_range": 130,
+   "ok": 626,
+   "below_range": 44
+  },
+  "predicted_status_counts": {
+   "above_range": 41,
+   "ok": 757,
+   "below_range": 2
+  },
+  "ladder_control_predicted_ceg": 1.314734786663651,
+  "ladder_control_observed_ceg": 1.4821621577851352
+ },
+ {
+  "target": "fw26",
+  "human_tpp_range": [
+   2.8934811910600327,
+   168.9861465823515
+  ],
+  "observed_status_counts": {
+   "above_range": 130,
+   "ok": 610,
+   "below_range": 60
+  },
+  "predicted_status_counts": {
+   "above_range": 121,
+   "ok": 679
+  },
+  "ladder_control_predicted_ceg": 0.7166079031285989,
+  "ladder_control_observed_ceg": 0.7948961942921917
+ },
+ {
+  "target": "fw26_ai",
+  "human_tpp_range": [
+   2.8934811910600327,
+   168.9861465823515
+  ],
+  "observed_status_counts": {
+   "above_range": 213,
+   "ok": 529,
+   "below_range": 58
+  },
+  "predicted_status_counts": {
+   "above_range": 236,
+   "ok": 518,
+   "below_range": 46
+  },
+  "ladder_control_predicted_ceg": null,
+  "ladder_control_observed_ceg": null
+ },
+ {
+  "target": "cosmopedia",
+  "human_tpp_range": [
+   2.8934811910600327,
+   168.9861465823515
+  ],
+  "observed_status_counts": {
+   "above_range": 179,
+   "ok": 583,
+   "below_range": 38
+  },
+  "predicted_status_counts": {
+   "above_range": 231,
+   "ok": 542,
+   "below_range": 27
+  },
+  "ladder_control_predicted_ceg": null,
+  "ladder_control_observed_ceg": 0.2230986582625403
+ }
+]

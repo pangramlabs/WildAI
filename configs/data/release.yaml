@@ -1,0 +1,18 @@
+# Hugging Face dataset release (python -m wildai.data.release.{export,card,push}).
+hub:
+  org: pangram          # https://huggingface.co/pangram
+  name: WildAI
+  private: true         # created private; make public from the Hub settings when ready
+  gated: false          # true adds access-request fields to the card and turns on manual approval
+include_pangram_windows: false   # per-window Pangram scores are released only if the authors decide so
+rows_per_shard: 100000
+card:                   # text about the released data; edit for each release
+  extension_note: "These crawls were processed from the first 2.6 % of each crawl's WARC files, without FineWeb's MinHash deduplication."
+  pangram_note: >-
+    Pangram 3.3.2 scored up to three disjoint 512-token windows of each document (the first, middle and last): a
+    document is Human or AI only when every window agrees, and Mixed otherwise, and its fractions are the shares of its
+    windows.
+  contact: the dataset maintainers through the Hugging Face discussion tab
+  license_text: >-
+    The text comes from FineWeb (ODC-By 1.0) and Common Crawl, and remains subject to Common Crawl's terms of use.
+  gated_prompt: Please describe how you will use WildAI. Access is granted for research use.
