@@ -25,7 +25,7 @@ def prepare(device: torch.device) -> bool:
         try:
             from kernels import get_kernel
 
-            _FA3 = get_kernel("varunneal/flash-attention-3").flash_attn_interface
+            _FA3 = get_kernel("varunneal/flash-attention-3", revision="de87b9b5af06dd9984df595bef90b2eba44b181a").flash_attn_interface
         except Exception:
             _FA3 = None
     return _FA3 is not None
