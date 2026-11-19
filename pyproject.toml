@@ -19,7 +19,7 @@ dependencies = [
 paper = ["matplotlib==3.10.9", "pillow>=10"]
 # training and evaluating the models (nanochat recipe; FA3 kernels on Hopper, SDPA elsewhere)
 train = [
-    "torch==2.9.1",
+    "torch==2.13.0",
     "kernels==0.11.7",
     "rustbpe>=0.1.0",
     "tiktoken>=0.11.0",
@@ -39,7 +39,7 @@ data = ["tokenizers>=0.22.0", "huggingface-hub>=0.34.4", "datasets>=4.0.0", "fss
 # labeling: the public Pangram API, EditLens and WebOrganizer classifiers (torch pinned with bitsandbytes and xformers)
 label = [
     "requests>=2.32",
-    "torch==2.9.1",
+    "torch==2.13.0",
     "transformers>=5,<6",
     "peft==0.21.0",
     "bitsandbytes==0.50.2",
