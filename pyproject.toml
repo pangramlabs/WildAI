@@ -45,7 +45,7 @@ label = [
     "bitsandbytes==0.50.2",
     "accelerate>=1.0",
     "emoji==2.16.0",
-    "xformers==0.0.33.post2",
+    "xformers==0.0.36",
 ]
 dev = ["pytest>=8.0", "ruff>=0.6"]
 
